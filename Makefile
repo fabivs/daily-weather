@@ -1,15 +1,17 @@
 .PHONY: deps deps.update build build.strict format lint check test test.trace repl repl.phx
 
 deps:
-	mix deps.get
+	mix do deps.get + deps.compile
 
 deps.update:
 	mix deps.update --all
 
 build:
+	deps \
 	mix compile
 
 build.strict:
+	deps \
 	mix compile --warnings-as-errors
 
 format:

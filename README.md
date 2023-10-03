@@ -1,21 +1,11 @@
 # DailyWeather
+The service will notify a user about the weather for the day at the given time each day.
 
-A service that notifies the user about the weather for the day.
+Rough implementation steps:
+- a job that runs at the given time that triggers the application
+- weather info is retrieved by an API to a open weather server of sorts
+- the user is notified via a channel => initial simple idea: a Telegram Bot
 
-## Installation
+(Ideally, it could be a push notification, but requires an app on the users' device)
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `daily_weather` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:daily_weather, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at <https://hexdocs.pm/daily_weather>.
-
+No DB is required (at least for now), it might become a necessity in the near future.

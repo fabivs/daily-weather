@@ -1,5 +1,5 @@
 defmodule DailyWeather.Services.WeatherTest do
-  use ExUnit
+  use ExUnit.Case
 
   # Probably will have to just mock the OpenMeteo module...
 

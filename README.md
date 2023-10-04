@@ -22,3 +22,10 @@ Rough implementation steps:
 
 ## Next steps
 If we want any sort of user configuration of this bot (eg. time of the day to be notified, what sort of info should the notification contain, etc.), we could do it in-memory, but eventually we will need a DB and figure out that part.
+
+---
+
+## Weather API services
+Interesting article: https://medium.com/aimonks/weather-apis-381c19c81bb4
+- https://openweathermap.org/ - Sign up required for free tier, not sure if it still asks for credit card anyway
+- ⭐️ https://open-meteo.com/ - No API key required at all, free to use for non commercial

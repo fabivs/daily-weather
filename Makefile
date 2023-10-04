@@ -6,12 +6,10 @@ deps:
 deps.update:
 	mix deps.update --all
 
-build:
-	deps \
+build: deps
 	mix compile
 
-build.strict:
-	deps \
+build.strict: deps
 	mix compile --warnings-as-errors
 
 format:

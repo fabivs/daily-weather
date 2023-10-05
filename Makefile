@@ -16,7 +16,7 @@ format:
 	mix format
 
 lint:
-	mix credo
+	mix do format --check-formatted + credo
 
 check:
 	mix do credo + dialyzer

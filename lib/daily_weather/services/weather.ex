@@ -17,6 +17,9 @@ defmodule DailyWeather.Services.Weather do
           |> Map.get("temperature_2m")
 
         {:ok, Enum.min_max(temperatures_list)}
+
+      {:error, _} = error ->
+        error
     end
   end
 end

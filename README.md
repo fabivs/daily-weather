@@ -11,7 +11,8 @@ Rough implementation steps:
 (Ideally, it could be a push notification, but requires an app on the users' device)
 
 ## Next steps
-If we want any sort of user configuration of this bot (eg. time of the day to be notified, what sort of info should the notification contain, etc.), we could do it in-memory, but eventually we will need a DB and figure out that part.
+- Could be interesting to have a weekly weather report sent by email through sentry 
+- If we want any sort of user configuration of this bot (eg. time of the day to be notified, what sort of info should the notification contain, etc.), we could do it in-memory, but eventually we will need a DB and figure out that part.
 
 ---
 

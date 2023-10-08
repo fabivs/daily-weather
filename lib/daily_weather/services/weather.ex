@@ -2,13 +2,11 @@ defmodule DailyWeather.Services.Weather do
   @moduledoc """
   Weather information service.
   """
+  alias DailyWeather.Location
   alias DailyWeather.Services.Clients.OpenMeteo
 
-  # TODO: refactor this duplicated type definition
-  @type location() :: %{lat: float(), lon: float()}
-
-  @spec max_and_min_temp_today(location) :: {:ok, {min :: float(), max :: float()}}
-  def max_and_min_temp_today(%{lat: _, lon: _} = location) do
+  @spec weather_report_for_today(Location.t()) :: {:ok, {min :: float(), max :: float()}}
+  def weather_report_for_today(%Location{} = location) do
     case OpenMeteo.get_weather_for(location, Date.utc_today(), Date.utc_today()) do
       {:ok, response} ->
         temperatures_list =

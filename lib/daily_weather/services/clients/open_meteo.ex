@@ -2,12 +2,11 @@ defmodule DailyWeather.Services.Clients.OpenMeteo do
   @moduledoc """
   Client for the OpenMeteo service.
   """
+  alias DailyWeather.Location
 
-  @type location() :: %{lat: float(), lon: float()}
-
-  @spec get_weather_for(location(), Date.t(), Date.t()) ::
+  @spec get_weather_for(Location.t(), Date.t(), Date.t()) ::
           {:ok, map()} | {:error, any()}
-  def get_weather_for(%{lat: lat, lon: lon} = _location, start_date, end_date) do
+  def get_weather_for(%Location{lat: lat, lon: lon}, start_date, end_date) do
     Req.get("https://api.open-meteo.com/v1/forecast",
       params: [
         latitude: lat,

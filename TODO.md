@@ -1,5 +1,9 @@
 # TODOs
 - [x] Find a weather API service to call
+    - [ ] Write tests by mocking the API
+        - [ ] Define a stubbed OpenMeteo endpoint just for tests in config
+    - [ ] Define a `WeatherReport` object for all the weather info for a daily report
+    - [ ] Adapt the API response into the object
 - [ ] Integrate with Telegram via a bot
     - [ ] Acquire bot credentials
     - [ ] Figure out what boilerplate is needed to be a telegram bot

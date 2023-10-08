@@ -19,7 +19,7 @@ lint:
 	mix do format --check-formatted + credo
 
 check:
-	mix do credo + dialyzer
+	mix do format --check-formatted + credo + dialyzer
 
 test:
 	mix test

@@ -1,5 +1,6 @@
 defmodule DailyWeather.Support.Fixtures do
-  
+  @moduledoc false
+
   @spec forecast_successful_response_fixture() :: {:ok, Req.Response.t()}
   def forecast_successful_response_fixture do
     {:ok,

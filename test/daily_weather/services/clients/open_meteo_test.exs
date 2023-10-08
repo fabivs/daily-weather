@@ -9,10 +9,10 @@ defmodule DailyWeather.Services.Clients.OpenMeteoTest do
 
   @api_endpoint "https://api.open-meteo.com/v1/forecast"
 
-  test "happy path" do
+  test "Successfully get weather information" do
+    date = ~D[2023-10-07]
     lat = 50
     lon = 10
-    date = ~D[2023-10-07]
 
     with_mock Req,
       get: fn @api_endpoint,

@@ -21,7 +21,6 @@ defmodule DailyWeather.Services.Clients.OpenMeteoTest do
                 longitude: ^lon,
                 daily:
                   "temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,precipitation_probability_mean",
-                hourly: "weathercode",
                 start_date: ^date,
                 end_date: ^date,
                 timezone: "auto"

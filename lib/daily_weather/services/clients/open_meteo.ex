@@ -15,14 +15,11 @@ defmodule DailyWeather.Services.Clients.OpenMeteo do
       "precipitation_probability_mean"
     ]
 
-    hourly_data = "weathercode"
-
     Req.get("https://api.open-meteo.com/v1/forecast",
       params: [
         latitude: lat,
         longitude: lon,
         daily: Enum.join(daily_data, ","),
-        hourly: hourly_data,
         start_date: start_date,
         end_date: end_date,
         timezone: "auto"

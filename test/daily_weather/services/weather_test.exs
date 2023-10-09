@@ -10,7 +10,6 @@ defmodule DailyWeather.Services.WeatherTest do
   import Fixtures
   import Mock
 
-  # TODO: I should setup a custom Date module to be able to mock it in tests
   @date Date.utc_today()
 
   @location %Location{
@@ -23,7 +22,14 @@ defmodule DailyWeather.Services.WeatherTest do
       get_weather_for: fn @location, @date, @date -> forecast_successful_response_fixture() end
     ) do
       assert Weather.weather_report_for_today(@location) ==
-               {:ok, %DailyReport{min_temp: 15.0, max_temp: 29.6}}
+               {:ok,
+                %DailyReport{
+                  apparent_min_temp: 14.5,
+                  apparent_max_temp: 29.1,
+                  min_temp: 15.0,
+                  max_temp: 29.6,
+                  precipitation_probability: 0
+                }}
     end
   end
 

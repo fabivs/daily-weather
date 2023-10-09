@@ -23,7 +23,7 @@ defmodule DailyWeather.Services.WeatherTest do
       get_weather_for: fn @location, @date, @date -> forecast_successful_response_fixture() end
     ) do
       assert Weather.weather_report_for_today(@location) ==
-               {:ok, %DailyReport{min_temp: 14.8, max_temp: 25.6}}
+               {:ok, %DailyReport{min_temp: 15.0, max_temp: 29.6}}
     end
   end
 

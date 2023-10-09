@@ -19,9 +19,12 @@ defmodule DailyWeather.Services.Clients.OpenMeteoTest do
               params: [
                 latitude: ^lat,
                 longitude: ^lon,
-                hourly: "temperature_2m",
+                daily:
+                  "temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,precipitation_probability_mean",
+                hourly: "weathercode",
                 start_date: ^date,
-                end_date: ^date
+                end_date: ^date,
+                timezone: "auto"
               ] ->
         forecast_successful_response_fixture()
       end do

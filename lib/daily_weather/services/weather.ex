@@ -10,11 +10,12 @@ defmodule DailyWeather.Services.Weather do
   def weather_report_for_today(%Location{} = location) do
     case OpenMeteo.get_weather_for(location, Date.utc_today(), Date.utc_today()) do
       {:ok, response} ->
-        {min_temp, max_temp} =
+        daily_data =
           response.body
-          |> Map.get("hourly")
-          |> Map.get("temperature_2m")
-          |> Enum.min_max()
+          |> Map.get("daily")
+
+        [min_temp] = daily_data["temperature_2m_min"]
+        [max_temp] = daily_data["temperature_2m_max"]
 
         {:ok, %DailyReport{min_temp: min_temp, max_temp: max_temp}}
 
